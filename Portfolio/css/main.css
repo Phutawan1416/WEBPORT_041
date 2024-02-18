@@ -1,0 +1,309 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+	--text: #e7e7e0;
+	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+@font-face {
+	font-family: raleway_f;
+	src : url(../fonts/raleway-regular.woff2);
+}
+@font-face {
+	font-family: raleway_f;
+	src: url(../fonts/raleway-black.woff2);
+	font-weight: 900;
+}
+body {
+	background-color: #010101;
+	font-family: raleway_f, sans-serif;
+	line-height: 1.55;
+}
+.main-header {
+	position: relative;
+}
+.main-header::after {
+	content: '';
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: calc(var(--index) * 10);
+	background-image: url(../img/ground.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	bottom: calc(var(--index) * -4.5);
+}
+.layers {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+.layer {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+	will-change: transform;
+	transition: var(--transition);
+	z-index: 1;
+}
+.layers__base {
+	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+	z-index: 0;
+}
+.layers__middle {
+	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+.layers__front {
+	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+}
+.layer__header {
+	z-index: 1;
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+	transition: var(--transition);
+	will-change: transform;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: var(--text);
+	text-shadow: 0 0 15px #9d822b;
+}
+
+
+.layers__title {
+	font-size: calc(var(--index) * 2.65);
+	letter-spacing: calc(var(--index) / 2.25);
+}
+.layers__caption {
+	font-size: calc(var(--index) / 1.175);
+	letter-spacing: calc(var(--index) / 3.5);
+	margin-top: calc(var(--index) * -.75);
+}
+.Mainc a{
+	align-self: end;
+	justify-content: end;
+}
+.main-article {
+	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	color: var(--text);
+	display: flex;
+	justify-content: center;
+	position: relative;
+	text-align: center;
+	/* Update: */
+	z-index: 10;
+	top: -1px;
+	
+}
+@media (max-width: 975px) {
+    .main-article__header {
+		padding-left:30% ;
+	    }
+	.main-article__paragraph{
+		padding-left:30% ;
+	}
+    
+}
+.main-article__header {
+	text-transform: uppercase;
+	font-size: calc(var(--index) * .8);
+	letter-spacing: calc(var(--index) / 7.5);
+	transform: var(--main-article-transform);
+	padding-right: 25%;
+	transition: var(--transition);
+	will-change: transform;
+	padding-top: 15%;
+	
+	
+}
+.main-article__IMG {
+    margin-top: 14%;
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    transform: var(--main-article-transform);
+    border-top: 2px solid rgb(255, 255, 255); /* ขอบบนเป็นสีแหลือง */
+    border-right: 2px solid rgb(255, 255, 255); /* ขอบขวาเป็นสีแหลือง */
+    border-bottom: 2px solid rgb(255, 255, 255); /* ขอบล่างเป็นสีฟ้า */
+    border-left: 2px solid rgb(255, 255, 255); /* ขอบซ้ายเป็นสีฟ้า */
+    border-radius: 15px; /* ทำให้มุมของกรอบเป็นวงกลม */
+    box-shadow: 
+      10px 10px 30px rgba(240, 240, 171, 0.5), /* เรืองแสงสีเหลืองด้านบนขวา */
+      -10px -10px 30px rgba(137, 194, 227, 0.5); /* เรืองแสงสีฟ้าด้านล่างซ้าย */
+  }
+
+.btb{
+	transform: var(--main-article-transform);
+	align-items: start;
+	justify-content: start;
+
+}
+.btb .btn-outline-light{
+	margin-left: 10px;
+}
+		
+
+
+
+.main-article__paragraph {
+	max-width: calc(var(--index) * 30);
+	font-size: calc(var(--index) * .9);
+	margin-top: calc(var(--index) / 4.25);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+	margin-right: 25%;
+}
+.content {
+	will-change: transform;
+}
+
+
+
+
+.h1{
+	color: #fff;
+	z-index: 1;
+}
+
+.sec-article{
+	color: #fff;
+}
+.main-article{
+	padding-top:10% ;
+}
+/* ////////////////////////Exercise//////////////////////// */
+.sec-article {
+	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+	min-height: 100vh;
+	color: var(--text);
+	position: relative;
+	/* Update: */
+	z-index: 10;
+	top: -1px;
+
+
+	
+}
+.sec-article .row{
+	background: #ffffff;
+	min-height: 100vh;
+	padding-left: 30%;
+}
+.Exevc{
+	padding-left:45% ;
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	padding-bottom:3% ;
+	will-change: transform;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: var(--text);
+	text-shadow: 0 0 15px #9d822b;
+}
+
+.cardx-group{
+    display: flex;
+    gap: 20px;
+	justify-content: center;
+	margin-bottom: 5%;
+	margin-left: 26%;
+	margin-right: 25%;
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+
+
+}
+.cardx{
+    width: 300px;
+    height: 270px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s;
+    cursor: pointer;
+	
+
+}
+.cardx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    transition: 0.5s;
+
+}
+.cardx .layerx{
+    background: linear-gradient(to top, rgb(255, 255, 255)rgba(0,0,0,0));
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75%;
+    opacity: 0;
+    transition: 0.3s;
+
+}
+
+.cardx .infox{
+    position: absolute;
+    bottom: -50%;
+    padding: 15px;
+    opacity: 0;
+    transition: 0.5s bottom, 1.75s opacity;
+	font-size: 20px;
+}
+.infox{
+    font-size: 10px;
+    margin-top: 3px;
+
+}
+.infox button{
+    background: #490CCC;
+    border: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius:8px;
+    margin-top: 8px;
+}
+.cardx:hover,.cardx:hover img, .cardx:hover layerx{
+    transform: scale(1.1);
+}
+.cardx:hover > .layerx{
+    opacity: 1;
+
+}
+.cardx:hover > .infox{
+    bottom: 0;
+    opacity: 1;
+
+}
+.cardx-group:hover > .cardx:not(:hover){
+    filter: blur(5px);
+}
+@media (max-width: 610px) {
+    .Visi{
+        display: none;
+		
+    }
+}
+/* third  */
+
+
+.bcard{
+	
+	background-color: #490CCC;
+	z-index: 1;
+}
+
